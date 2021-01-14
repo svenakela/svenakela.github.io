@@ -1,13 +1,14 @@
-@import url("https://fonts.googleapis.com/css?family=Courgette:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Calibri:400,700&display=swap");
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
     background: linear-gradient(135deg, #71d444, #165fa3, #477aaa);
-    font-family: "Courgette", cursive;
+    font-family: "Calibri", Arial, Helvetica, sans-serif;
 }
 
 header {
@@ -18,7 +19,7 @@ header {
     position: relative;
     height: 100vh;
     color: #eee;
-    z-index: -1;
+    /* z-index: -1; */
     text-align: center;
 }
 
@@ -37,20 +38,20 @@ section {
     scroll-snap-stop: always;
 }
 
-.s1 {
+#s1 {
     background-image: url(1.jpg);
     background-size: cover;
     background-position: center;
 }
 
-.s2 {
+#s2 {
     background-image: url(mv.jpg);
     background-size: cover;
     background-position: left;
     color: #fff;
 }
 
-.s3 {
+#s3 {
     background: #fff;
 }
 
