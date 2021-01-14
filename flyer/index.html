@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" media="screen" href="style.css" />
+    <!-- https://github.com/michalsnik/aos/tree/v2 -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+    <main>
+        <header data-aos="fade-zoom-in">
+            <h3>Hi,</h3>
+            <p>This is the beginning</p>
+            <div class="scrolldown">Scroll down</div>
+        </header>
+        <section class="s1" data-aos="fade-zoom-in">
+            <div class="content" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+                <h3>Slide 1</h3>
+                Lorem ipsum yoda yoda
+            </div>
+        </section>
+        <div class="spacer"></div>
+        <section class="s2" data-aos="fade-zoom-in">
+            <h3>Slide 2</h3>
+        </section>
+        <div class="spacer"></div>
+        <section class="s3">
+            <div class="content">
+                <h3>What is Lorem Ipsum?</h3>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+        </section>
+    </main>
+</body>
+<script src="effect.js"></script>
+<script>
+    AOS.init({
+        offset: 200,
+        duration: 800,
+        easing: 'ease-in-sine',
+        delay: 100,
+    });
+</script>
+
+</html>
