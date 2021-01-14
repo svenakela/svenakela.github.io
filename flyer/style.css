@@ -65,7 +65,7 @@ div.spacer {
 
 .scrolldown {
     position: absolute;
-    bottom: calc(2rem * 0.5);
+    bottom: 8rem;
     left: 0;
     width: 100%;
     text-align: center;
