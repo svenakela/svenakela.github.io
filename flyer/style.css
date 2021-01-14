@@ -90,6 +90,12 @@ section {
     background-position: center;
 }
 
+#s1b {
+    background-image: url(1b.jpg);
+    background-size: cover;
+    background-position: right;
+}
+
 #s1 div img {
     width: 40%;
     float: right;
