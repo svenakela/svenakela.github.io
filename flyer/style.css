@@ -44,10 +44,6 @@ header {
     background-position: left;
 }
 
-header .scrolldown {
-    color: rgb(51, 50, 50);
-}
-
 header h1 {
     font-size: clamp(2rem, -0.2500rem + 10.0000vw, 5rem);
     position: absolute;
@@ -130,7 +126,8 @@ div.spacer {
     height: 50vh;
 }
 
-.scrolldown {
+.scrolldown,
+header .scrolldown {
     background-image: url(mouse.png);
     background-size: contain;
     background-position: center;
@@ -150,5 +147,13 @@ div.spacer {
     }
     section {
         font-size: 2.5rem;
+    }
+}
+
+@media only screen and (orientation: landscape) and (max-width: 1000px) {
+    .scrolldown {
+        bottom: 50%;
+        left: calc(100vw - clamp(2rem, -0.2500rem + 10.0000vw, 5rem));
+        width: clamp(2rem, -0.2500rem + 10.0000vw, 5rem);
     }
 }
