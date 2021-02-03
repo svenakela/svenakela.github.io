@@ -3,7 +3,7 @@ function goToAnchor(anchor) {
 }
 
 document.querySelectorAll('[scrollTo]').forEach(element => {
-    var insertThis = '<div class="scrolldown" onclick="goToAnchor(\'zzz\')">Mer<br>&#8675;</div>'
+    var insertThis = '<div class="scrolldown" onclick="goToAnchor(\'zzz\')">.</div>'
         .replace('zzz', element.getAttribute('scrollTo'));
     element.insertAdjacentHTML('beforeend', insertThis);
 });
