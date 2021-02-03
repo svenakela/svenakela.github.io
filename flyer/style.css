@@ -24,7 +24,7 @@ div.logo {
     background-repeat: no-repeat;
     position: fixed;
     width: 100vw;
-    height: 15vh;
+    height: clamp(3rem, 1.5000rem + 6.6667vw, 5rem);
     top: 1vh;
     left: 1vw;
 }
@@ -49,13 +49,21 @@ header .scrolldown {
 }
 
 header h1 {
-    font-size: 5rem;
+    font-size: clamp(2rem, -0.2500rem + 10.0000vw, 5rem);
     position: absolute;
     top: 20%;
     left: 0;
     width: 100%;
     text-align: center;
     cursor: pointer;
+}
+
+header h2 {
+    font-size: clamp(2rem, 1.2500rem + 3.3333vw, 3rem);
+}
+
+header p {
+    font-size: clamp(1.2rem, 0.6000rem + 2.6667vw, 2rem);
 }
 
 section {
@@ -131,34 +139,16 @@ div.spacer {
     bottom: 5%;
     left: 0;
     width: 100%;
-    height: 5rem;
+    height: clamp(2rem, -0.2500rem + 10.0000vw, 5rem);
     text-align: center;
     cursor: pointer;
 }
 
-@media screen and (max-width: 750px) {
-    div.logo {
-        width: 60vw;
-        height: 10vh;
-    }
-    header h1 {
-        font-size: 4rem;
-        position: absolute;
-        top: 20%;
-        left: 0;
-    }
-    header h2 {
-        font-size: 3rem;
-    }
-    header p {
-        font-size: 2rem;
-    }
+@media only screen and (orientation: portrait) and (max-width: 1000px) {
     .content {
-        width: 98vw;
-        max-width: 700px;
-        font-size: 2rem;
+        max-width: 100%;
     }
-    .scrolldown {
-        height: 4rem;
+    section {
+        font-size: 2.5rem;
     }
 }
