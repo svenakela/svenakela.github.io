@@ -7,8 +7,7 @@
 }
 
 body {
-    /* background: linear-gradient(135deg, #71d444, #165fa3, #477aaa); */
-    background-color: #888;
+    background-color: #fff;
     font-family: "Ubuntu", Arial, Helvetica, sans-serif;
 }
 
@@ -45,7 +44,7 @@ header {
 }
 
 header h1 {
-    font-size: clamp(2rem, -0.2500rem + 10.0000vw, 5rem);
+    font-size: clamp(2rem, 0.5000rem + 6.6667vw, 4rem);
     position: absolute;
     top: 20%;
     left: 0;
@@ -55,7 +54,7 @@ header h1 {
 }
 
 header h2 {
-    font-size: clamp(2rem, 1.2500rem + 3.3333vw, 3rem);
+    font-size: clamp(2rem, 1.6250rem + 1.6667vw, 3rem);
 }
 
 header p {
@@ -81,7 +80,7 @@ section {
     flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
-    width: 45vw;
+    width: 40vw;
     max-width: 700px;
     min-height: 50vh;
     background: rgba(255, 255, 255, 0.5);
@@ -108,10 +107,15 @@ section {
 }
 
 #s2 {
-    background-image: url(mv.jpg);
+    background-image: url(s2.jpg);
+    background-color: #aaa;
     background-size: cover;
-    background-position: left;
-    color: #fff;
+    background-position: left bottom;
+    color: #222;
+}
+
+#s2 .content {
+    background: none;
 }
 
 #s2 .scrolldown {
@@ -119,7 +123,19 @@ section {
 }
 
 #s3 {
-    background: #fff;
+    background-image: url(s2.jpg);
+    background-color: #aaa;
+    background-size: cover;
+    background-position: left bottom;
+    color: #222;
+}
+
+#s3 .content {
+    background: none;
+}
+
+#s3 .scrolldown {
+    color: rgb(51, 50, 50);
 }
 
 div.spacer {
@@ -133,12 +149,41 @@ header .scrolldown {
     background-position: center;
     background-repeat: no-repeat;
     position: absolute;
-    bottom: 5%;
+    bottom: 8%;
     left: 0;
     width: 100%;
     height: clamp(2rem, -0.2500rem + 10.0000vw, 5rem);
     text-align: center;
     cursor: pointer;
+}
+
+#stepContainer {
+    display: block;
+    width: 100%;
+}
+
+.step {
+    width: 99%;
+    display: flex;
+    flex-direction: row;
+    height: 5rem;
+    color: #fff;
+    background-color: rgba(15, 48, 117, 0.445);
+    -webkit-box-shadow: 0.6rem 0.6rem 0.2rem 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0.6rem 0.6rem 0.2rem 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0.6rem 0.6rem 0.2rem 0 rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+}
+
+.step .year {
+    font-size: 2.5rem;
+    vertical-align: top;
+    margin-right: 1rem;
+}
+
+.step .plan {
+    font-size: 0.9rem;
+    vertical-align: top;
 }
 
 @media only screen and (orientation: portrait) and (max-width: 1000px) {
@@ -148,11 +193,23 @@ header .scrolldown {
     section {
         font-size: 2.5rem;
     }
+    .step {
+        height: 14rem;
+    }
+    .step .year {
+        font-size: 4.5rem;
+        vertical-align: top;
+        margin-right: 2rem;
+    }
+    .step .plan {
+        font-size: 2rem;
+        vertical-align: top;
+    }
 }
 
 @media only screen and (orientation: landscape) and (max-width: 1000px) {
     .scrolldown {
-        bottom: 50%;
+        bottom: 45%;
         left: calc(100vw - clamp(2rem, -0.2500rem + 10.0000vw, 5rem));
         width: clamp(2rem, -0.2500rem + 10.0000vw, 5rem);
     }
