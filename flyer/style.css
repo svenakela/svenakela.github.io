@@ -130,12 +130,12 @@ section {
     color: #222;
 }
 
-#s3 .content {
-    background: none;
-}
-
 #s3 .scrolldown {
     color: rgb(51, 50, 50);
+}
+
+#s4 {
+    background-color: #d09a3b;
 }
 
 div.spacer {
@@ -178,12 +178,13 @@ header .scrolldown {
 .step .year {
     font-size: 2.5rem;
     vertical-align: top;
-    margin-right: 1rem;
+    margin-right: 4rem;
 }
 
 .step .plan {
     font-size: 0.9rem;
     vertical-align: top;
+    flex: 1;
 }
 
 @media only screen and (orientation: portrait) and (max-width: 1000px) {
