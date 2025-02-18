@@ -36,6 +36,7 @@ under the License.
   <body>
     <menu name="Overview">
       <item name="Introduction" href="introduction.html" />
+      <item name="About This Page" href="about-this-page.html" />
       <item name="Search" href="search.html" />
     </menu>
 

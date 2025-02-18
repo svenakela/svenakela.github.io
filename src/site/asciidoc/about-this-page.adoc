@@ -1,0 +1,12 @@
+= About This Page
+
+This page is entirely written in link:https://asciidoc.org/[Asciidoc] and generated with the link:https://maven.apache.org/plugins/maven-site-plugin/[Maven site plugin].
+
+The setup can be found in link:https://github.com/svenakela/svenakela.github.io[this repository].
+
+Content written on this page, also found in the linked repository, belongs to me and is licensed under link:https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1[Creative Commons Attribution 4.0 International].
+
+
+Tech Docs © 2025 by link:https://github.com/svenakela[svenakela] is licensed under link:https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1[CC BY 4.0] 
+image:https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1[Static, 20] 
+image:https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1[Static, 20]

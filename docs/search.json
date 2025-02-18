@@ -1,17 +1,21 @@
 [ {
-  "id" : 1739875657738988032,
+  "id" : 1739890014770144768,
   "path" : "./introduction.html",
   "text" : "Introduction Where to find information"
 }, {
-  "id" : 1739875657741112064,
+  "id" : 1739890014775516160,
   "path" : "./infrastructure/overview.html",
   "text" : "Infra lll"
 }, {
-  "id" : 1739875657741829120,
+  "id" : 1739890014778131200,
+  "path" : "./about-this-page.html",
+  "text" : "About This Page This page is entirely written in Asciidoc and generated with the Maven site plugin. The setup can be found in this repository. Content written on this page, also found in the linked repository, belongs to me and is licensed under Creative Commons Attribution 4.0 International. Tech Docs © 2025 by svenakela is licensed under CC BY 4.0"
+}, {
+  "id" : 1739890014778869504,
   "path" : "./search.html",
   "text" : ""
 }, {
-  "id" : 1739875657743212288,
+  "id" : 1739890014780633344,
   "path" : "./index.html",
   "text" : "Tech Docs Helo"
 } ]
