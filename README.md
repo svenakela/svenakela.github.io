@@ -112,5 +112,5 @@ All HTML menus are built from the `src/site/site.xml` definition. Any new docume
 # Technical Writing Standards
 
 Google offers a complete Technical Writing course with pre-studies, slide decks and Youtube videos all for free. 
-To keep a high standard and persistent feeling of the documentation, all authors should complete this course.
+To keep a high standard and persistent feeling of documentation, you should complete this course.
 https://developers.google.com/tech-writing
