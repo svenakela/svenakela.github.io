@@ -1,0 +1,89 @@
+<html lang="en" style="height:100%">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>The Tech Docs – Search</title>
+
+        <link rel="icon" href="./img/favicons/favicon.ico">
+        <link rel="stylesheet" href="./css/bootstrap.min.css" />
+        <link rel="stylesheet" href="./css/bootstrap-icons.css" />
+        <link rel="stylesheet" href="./css/maven-base.css" />
+        <link rel="stylesheet" href="./css/prettify.css" />
+        <link rel="stylesheet" href="./css/maven-theme.css" />
+        <link rel="stylesheet" href="./css/site.css" />
+  </head>
+  <body class="d-flex flex-column h-100">
+
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div id="NavBrandBar.Container" class="container-fluid">
+          <a href="/" id="NavBrandBar.BrandLink" title="Navbar Brand Icon" class="text-light active navbar-brand">
+            Tech Docs - Search
+          </a>
+    </header>
+
+  <style>
+    div { 
+      padding: 0.5em;
+      font-family: system-ui, -apple-system, 'Segoe UI';
+    }
+    input {
+      size: 60;
+      width: 40em;
+      height: 1.7em;
+      font-size: 1.5em;
+    }
+  </style>
+
+  <div>
+    <input type="search" id="site-search" autofocus="true">
+  </div>
+  <div id="search-results"></div>
+
+
+  <script>
+    const jaja = async () => {
+
+      const sourceData = await fetch('/search.json').then(response => response.text() );
+      await import('https://cdn.jsdelivr.net/npm/minisearch@7.1.0/dist/umd/index.min.js');
+      const documents = await JSON.parse(sourceData);
+      const index = new MiniSearch({
+        fields: ['path', 'text'],
+        storeFields: ['path', 'text']
+      });
+      index.addAll(documents);
+      const input = document.querySelector('input[type=search]');
+      const container = document.querySelector('#search-results');
+      
+      const search = query => {
+        if (query.length > 1) {
+          const results = index.search(query, { prefix: true, fuzzy: 0.3 });
+          const resultDiv = document.createElement('div'); 
+          results.slice(0, 10).forEach(result => {
+            const div = document.createElement('div');
+            const link = document.createElement('a');
+            link.setAttribute('href', result.path);
+            link.setAttribute('target', '_blank');
+            link.appendChild(document.createTextNode(result.path));
+            div.appendChild(link);
+            div.appendChild(document.createElement('p'));
+            div.appendChild(document.createTextNode('score: ' + result.score + ' - ' + result.text.slice(0, 250)))
+            resultDiv.append(div);
+          });
+          container.replaceChildren(resultDiv);
+          input.after(container);
+        } else {
+          container.parentNode.removeChild(container);
+        }
+      };
+      input.addEventListener('input', event => {
+        search(event.target.value);
+      });
+      
+
+    };
+
+    jaja();
+
+  </script>
+</body>

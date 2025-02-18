@@ -1,0 +1,11 @@
+:toc: macro
+:toclevels: 3
+:toc-title: Contents
+:doctype: book
+:chapter-label:
+
+toc::[]
+
+:doctype: book
+
+include::index.adoc[]

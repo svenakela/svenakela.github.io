@@ -1,0 +1,35 @@
+@startuml
+
+artifact "No Good at All" {
+  control A
+  component B
+  component C
+  component D
+  database DB
+  
+  A --> B
+  A --> C
+  A --> D
+  B "3 x Save\nMultiOrder" --> DB
+  C --> DB
+  D --> DB
+}
+
+artifact "Good" {
+  control A2
+  component B2
+  component C2
+  component D2
+  component SinglePoint
+  database DB2
+  
+  A2 --> B2
+  A2 --> C2
+  A2 --> D2
+  B2 --> SinglePoint
+  C2 --> SinglePoint
+  D2 --> SinglePoint
+  SinglePoint "Save MultiOrder" --> DB2
+}
+
+@enduml

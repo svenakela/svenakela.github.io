@@ -1,0 +1,5 @@
+= Introduction
+
+== Where to find information
+
+image::generated-diagrams/application-relations.svg[]
