@@ -19,19 +19,13 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns="http://maven.apache.org/DECORATION/1.6.0"
-  xsi:schemaLocation="http://maven.apache.org/DECORATION/1.6.0 http://maven.apache.org/xsd/decoration-1.6.0.xsd">
+<site xmlns="http://maven.apache.org/SITE/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/SITE/2.0.0 https://maven.apache.org/xsd/site-2.0.0.xsd">
 
   <skin>
     <groupId>io.github.stevecrox.maven.skins</groupId>
     <artifactId>bootstrap-site-skin</artifactId>
   </skin>
-  <!-- skin>
-    <groupId>org.apache.maven.skins</groupId>
-    <artifactId>maven-fluido-skin</artifactId>
-    <version>2.0.0</version>
-  </skin -->
 
   <body>
     <menu name="Overview">
@@ -41,7 +35,8 @@ under the License.
     </menu>
 
     <menu name="Infrastructure Docs">
-      <item name="System Overview" href="system/overview.html" />
+      <item name="Infrastructure Overview" href="infrastructure/overview.html" />
+      <item name="Caddy as an Azure Firewall" href="infrastructure/caddy-as-an-azure-firewall.html" />
     </menu>
 
   </body>
@@ -53,4 +48,4 @@ under the License.
   </custom>
 
   <publishDate position="right" />
-</project>
+</site>

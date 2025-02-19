@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en" style="height:100%">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="#generatedBy()" />
+    <meta name="date" content="2025-02-19 19:35:25 +0100" />
+
+    <title>Caddy as an Azure Firewall – Things That Could be Useful</title>
+
+        <link rel="icon" href=".././img/favicons/favicon.ico">
+    <!-- CSS Stylesheets, site.css is included so downstream projects can override them as appropriate. -->
+        <link rel="stylesheet" href=".././css/bootstrap.min.css" />
+        <link rel="stylesheet" href=".././css/bootstrap-icons.css" />
+        <link rel="stylesheet" href=".././css/maven-base.css" />
+        <link rel="stylesheet" href=".././css/prettify.css" />
+
+
+    <link rel="stylesheet" href=".././css/maven-theme.css" />
+        <link rel="stylesheet" href=".././css/site.css" />
+  </head>
+  <body class="d-flex flex-column h-100">
+
+    <header class="sticky-top">
+                      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+          <div id="NavBrandBar.Container" class="container-fluid">
+        
+      
+    
+                      <a href="../#" id="NavBrandBar.BrandLink"
+              title="Navbar Brand Icon"
+            
+              class="text-light active navbar-brand"
+          >
+  
+  
+                  Things That Could be Useful
+        </a>
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#NavBrandBar.Collapse.Container" aria-controls="NavBrandBar.Collapse.Container" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+      
+  
+    <div id="NavBrandBar.Collapse.Container" class="justify-content-end navbar-collapse collapse">
+    <div class="d-flex navbar-nav">
+      
+      
+      
+              <ul id="NavBrandBar.Menu.List" class="navbar-nav">
+            
+                    
+            <li class="nav-item dropdown">
+        <a class="navbar_collapse_menu nav-link dropdown-toggle" href="#" id="Menu.Dropdown.Overview" role="button" data-bs-toggle="dropdown" aria-expanded="false">Overview <b class="caret"></b></a>
+        <ul class="dropdown-menu" aria-labelledby="Menu.Dropdown.Overview">
+                                    <li class="nav-item dropdown-item" id="IntroductionDropdown">
+                                                <a href="../introduction.html" id="IntroductionDropdownLink" title="Introduction"  class="dropdown-item" >Introduction</a>                    </li>
+                                                <li class="nav-item dropdown-item" id="About This PageDropdown">
+                                                <a href="../about-this-page.html" id="About This PageDropdownLink" title="About This Page"  class="dropdown-item" >About This Page</a>                    </li>
+                                                <li class="nav-item dropdown-item" id="SearchDropdown">
+                                                <a href="../search.html" id="SearchDropdownLink" title="Search"  class="dropdown-item" >Search</a>                    </li>
+                              </ul>
+      </li>
+                <li class="nav-item dropdown">
+        <a class="navbar_collapse_menu nav-link dropdown-toggle" href="#" id="Menu.Dropdown.Infrastructure Docs" role="button" data-bs-toggle="dropdown" aria-expanded="false">Infrastructure Docs <b class="caret"></b></a>
+        <ul class="dropdown-menu" aria-labelledby="Menu.Dropdown.Infrastructure Docs">
+                                    <li class="nav-item dropdown-item" id="Infrastructure OverviewDropdown">
+                                                <a href="../infrastructure/overview.html" id="Infrastructure OverviewDropdownLink" title="Infrastructure Overview"  class="dropdown-item" >Infrastructure Overview</a>                    </li>
+                                                <li class="nav-item dropdown-item" id="Caddy as an Azure FirewallDropdown">
+                                                <a href="../infrastructure/caddy-as-an-azure-firewall.html" id="Caddy as an Azure FirewallDropdownLink" title="Caddy as an Azure Firewall"  class="dropdown-item" >Caddy as an Azure Firewall</a>                    </li>
+                              </ul>
+      </li>
+              </ul>
+          </div>
+  </div>
+
+  </nav>
+            
+      <nav id="projectBar" class="navbar navbar-expand-sm navbar_suffix_menu navbar-dark bg-dark" aria-label="projectBarList">
+        
+                      <ul id="projectBar.navbar.list" class="navbar-nav navbar_suffix_menu">
+                
+                        
+            <li class="nav-item dropdown">
+        <a class="navbar_suffix_menu nav-link dropdown-toggle" href="#" id="Menu.Dropdown.Overview" role="button" data-bs-toggle="dropdown" aria-expanded="false">Overview <b class="caret"></b></a>
+        <ul class="dropdown-menu" aria-labelledby="Menu.Dropdown.Overview">
+                                    <li class="nav-item dropdown-item" id="IntroductionDropdown">
+                                                <a href="../introduction.html" id="IntroductionDropdownLink" title="Introduction"  class="dropdown-item" >Introduction</a>                    </li>
+                                                <li class="nav-item dropdown-item" id="About This PageDropdown">
+                                                <a href="../about-this-page.html" id="About This PageDropdownLink" title="About This Page"  class="dropdown-item" >About This Page</a>                    </li>
+                                                <li class="nav-item dropdown-item" id="SearchDropdown">
+                                                <a href="../search.html" id="SearchDropdownLink" title="Search"  class="dropdown-item" >Search</a>                    </li>
+                              </ul>
+      </li>
+                <li class="nav-item dropdown">
+        <a class="navbar_suffix_menu nav-link dropdown-toggle" href="#" id="Menu.Dropdown.Infrastructure Docs" role="button" data-bs-toggle="dropdown" aria-expanded="false">Infrastructure Docs <b class="caret"></b></a>
+        <ul class="dropdown-menu" aria-labelledby="Menu.Dropdown.Infrastructure Docs">
+                                    <li class="nav-item dropdown-item" id="Infrastructure OverviewDropdown">
+                                                <a href="../infrastructure/overview.html" id="Infrastructure OverviewDropdownLink" title="Infrastructure Overview"  class="dropdown-item" >Infrastructure Overview</a>                    </li>
+                                                <li class="nav-item dropdown-item" id="Caddy as an Azure FirewallDropdown">
+                                                <a href="../infrastructure/caddy-as-an-azure-firewall.html" id="Caddy as an Azure FirewallDropdownLink" title="Caddy as an Azure Firewall"  class="dropdown-item" >Caddy as an Azure Firewall</a>                    </li>
+                              </ul>
+      </li>
+                    
+            </ul>
+          
+            
+  
+                              
+    <div id="breadcrumbSpacer" ></div>
+  
+                      <div id="projectBar.DateVersion.Container" class="justify-content-start">
+                        
+                        
+                              
+    
+      
+    <span id="projectVersion" class="px-1 navbar-text">Version: 0.0.9</span>
+                          </div>
+                          
+        
+
+                            <div id="projectBar.Container.Right.Prefix" class="d-flex flex-fill"></div>
+          <div id="projectBar.DateVersion.Container" class="justify-content-end">
+            
+                          
+      
+      
+  <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2025-02-19</span>
+                                              </div>
+              </div>
+    </nav>
+      </header>
+
+              <main class="flex-grow-1" role="main">
+        <div class="container mt-3 rounded">
+                  
+    
+    <h1>Caddy as an Azure Firewall</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Are you running services in Azure? Ever longed for a stable and secure firewall that doesn&#8217;t cost a kidney? What if I tell you, you can run a reduntant and load balanced, super secure firewall capable of managing high volumes of traffic, for peanut money?</p>
+</div>
+<div class="paragraph">
+<p>Say hello to <a href="https://coraza.io/">Coraza</a>, An OWASP Core Ruleset firewall based on <a href="https://caddyserver.com/">Caddy server</a>.</p>
+</div>
+<div class="paragraph">
+<p>In this article I will guide you through setting up:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A public IP for external access</p>
+</li>
+<li>
+<p>Load balancing with strict IP rules for incoming traffic</p>
+</li>
+<li>
+<p>One to many (1-n) Caddy Coraza instances serving incoming traffic</p>
+</li>
+<li>
+<p>Direct file access from a shared Azure Blob Storage</p>
+</li>
+<li>
+<p>Reverse proxying to other services you have running</p>
+</li>
+<li>
+<p>Continuous HTTPS with help of Caddy&#8217;s powerful features</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>And we will do all of this with OpenTofu or Terraform!</p>
+</div>
+<div class="paragraph">
+<p>Hey! Why are you using Terraform and not <a href="https://opentofu.org/">OpenTofu</a>?! Simply because I was using TF before the licensing conflict started. I do have an intention to migrate to OpenTofu, but I am quite heavily invested into TF and time is precious. With this article I am 100 % sure you are able to convert this to OpenTofu on your own!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="the_setup">The Setup</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="../generated-diagrams/caddy-coraza-in-azure.svg" alt="diagram" width="80%"/>
+</div>
+</div>
+<div class="paragraph">
+<p>What you need to follow suit:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Azure Account. Will it work with some free tier account? No idea, I pay for premium stuff</p>
+</li>
+<li>
+<p>Opentofu or Terraform and know how</p>
+</li>
+<li>
+<p>The AZ-CLI, used to authenticate tofu/tf against Azure</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="estimated_azure_costs">Estimated Azure Costs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>While costs are not static in a cloud environment and are different depending on regions, this setup has been running in multiple environments for a few years and the monthly cost is pretty solid. The entire installation is also created within its own resource group which makes it easy to track costs specifically for the firewall.</p>
+</div>
+<div class="paragraph">
+<p>Here is a rough estimate on costs, rounded average from months during 2024.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 80%;"/>
+<col style="width: 20%;"/>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Azure Thingy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Average Monthly Cost</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Caddy instance 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">€ 41</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Caddy instance 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">€ 41</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage Account for instances</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">€ 36</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Load balancer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">€ 18</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Public IP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">€ 4</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Log Analytics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">€ 1?..</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Rough Total</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>€ 114</strong></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The cost of the storage account is fluctuating the most, some months it has been doubled and it is mostly writes to the storage that affects the price. Regardless, I haven&#8217;t seen any panic peak of costs so far and no month have been above € 180 with this setup. Note, this setup is in use in multiple European Azure regions, your mileage may vary.</p>
+</div>
+<div class="paragraph">
+<p>You <em>can</em> actually go with lower resources on the containers, but as I host quite a lot of endpoints with FW rules enabled on all of them, a reload of config goes faster with a bit more memory. If you do this for a hobby installation, you can definitely escape with less resources. If you are not worried about redundancy (Caddy is very reliable as is) you could even go with only one container instance to begin with and scale up later.</p>
+</div>
+<div class="paragraph">
+<p>As a matter of fact, this is a very reliable and cheap way of running Docker containers in Azure with a public IP, even if it&#8217;s only one container. And if you get away with an IPv6 address, there is no cost for the address at all.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="lets_do_it">Let&#8217;s do it!</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Everything below can be found in the <a href="https://github.com/svenakela/caddy-coraza-in-azure">Caddy Coraza in Azure</a> repository.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+You need Opentofu/Terraform and Azure knowledge to get going. Setting up your environment is beyond this guide. To continue with this setup your Tofu/TF environment should already be authenticated with <a href="https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/azure_cli.html">Azure Cli</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="preparation_create_a_state_file">Preparation - Create a State File</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+If you already have a state file this step is not needed.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>OK, first of <strong>you should not</strong> keep your state file locally! Let&#8217;s begin with setting up a Blob Storage to keep the state file safe in your Azure account, this will also make it possible for several people to do devops work within the same configuration.</p>
+</div>
+<div class="paragraph">
+<p>This is a pre-step and we don&#8217;t want to incorporate this step in the rest of the config. The state file configuration is sensitive and should be its own isolated little island to avoid being overwritten by mistake.</p>
+</div>
+<div class="sect3">
+<h4 id="the_resource_group_module">The Resource Group Module</h4>
+<div class="paragraph">
+<p>Create a <code>modules/resourcegroup</code> directory. Create the files</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/svenakela/caddy-coraza-in-azure/blob/main/modules/resourcegroup/main.tf"><code>main.tf</code> with content here</a></p>
+</li>
+<li>
+<p><a href="https://github.com/svenakela/caddy-coraza-in-azure/blob/main/modules/resourcegroup/output.tf"><code>output.tf</code> with content here</a></p>
+</li>
+<li>
+<p><a href="https://github.com/svenakela/caddy-coraza-in-azure/blob/main/modules/resourcegroup/variables.tf"><code>variables.tf</code> with content here</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="the_state_storage">The State Storage</h4>
+<div class="paragraph">
+<p>Create a <code>modules/tfstatestorage</code> directory. Create the files</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/svenakela/caddy-coraza-in-azure/blob/main/modules/tfstatestorage/main.tf"><code>main.tf</code> with content here</a></p>
+</li>
+<li>
+<p><a href="https://github.com/svenakela/caddy-coraza-in-azure/blob/main/modules/tfstatestorage/output.tf"><code>output.tf</code> with content here</a></p>
+</li>
+<li>
+<p><a href="https://github.com/svenakela/caddy-coraza-in-azure/blob/main/modules/tfstatestorage/providers.tf"><code>providers.tf</code> with content here</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In <code>main.tf</code> there are some changes to do:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terraform" data-lang="terraform"># main.tf
+module "resourcegroup" {
+  source = "../resourcegroup"
+  resource_group_name_prefix = "rg-mysuperspecial-statestorage"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The prefix will be combined with a random pet name to make sure that the resource group has a unique name within your account. Change the prefix accordingly.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terraform" data-lang="terraform"># main.tf
+resource "azurerm_storage_account_network_rules" "tfstate" {
+  storage_account_id    = azurerm_storage_account.tfstate.id
+  default_action        = "Deny"
+  ip_rules              = ["ADD-YOUR-HOME-OR-OFFICE-PUBLIC-IP-ADDRESS-HERE-FOR-REDUCED-ACCESS"]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>ip_rules</code> config limits the access to the storage. If you are working from a fixed IP address add it here to make the storage less exposed. In my Azure accounts such storage is restricted down further to specific devops users and only those users can reach the state file, i.e. only a handful of users can execute the changes.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="plan_and_apply">Plan and Apply</h4>
+<div class="paragraph">
+<p>Open up a terminal and go to the <code>modules/tfstatestorage</code> directory. Initialize and apply the plan:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ cd modules/tfstatestorage
+$ tofu init
+$ tofu plan
+$ tofu apply --auto-approve
+
+...
+
+Apply complete! Resources: 6 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+container_id = "https://buyskwliprnh.blob.core.windows.net/tfstates"
+container_name = "tfstates"
+storage_account_id = "/subscriptions/1ad31abc-...-2ad7f10adf/resourceGroups/rg-mysuperspecial-statestorage-engaged-humpback/providers/Microsoft.Storage/storageAccounts/buyskwliprnh"
+storage_account_name = "buyskwliprnh"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This will create the state storage. Copy the output, we need it!</p>
+</div>
+<div class="paragraph">
+<p>In the root directory, setup a <a href="https://github.com/svenakela/caddy-coraza-in-azure/blob/main/providers.tf"><code>providers.tf</code></a> and use the output from the state storage above to fill in the config:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terraform" data-lang="terraform">  backend "azurerm" {
+    resource_group_name = "rg-mysuperspecial-statestorage-engaged-humpback"
+    storage_account_name = "buyskwliprnh"
+    container_name       = "tfstates"
+    key                  = "caddy-in-azure.tfstate" // MUST be unique!
+  }
+
+provider "azurerm" {
+  features {}
+  subscription_id = "1ad31abc-...-2ad7f10adf"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can re-use the state storage for many state files and if you do it is very important that the <code>key</code> file name is changed for each config! If there are two different configs with the same state file, you will end up in horrible conflicts.</p>
+</div>
+<div class="paragraph">
+<p>In the terminal go to the root directory of the project and apply:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ tofu init
+
+...
+OpenTofu has been successfully initialized!
+...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You should now have a state file named <code>caddy-in-azure.tfstate</code> in the Blob Storage, and you are ready to go with the real WAF configuration!</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+      </div>
+    </main>
+
+  <footer class="footer d-flex align-items-end mt-auto py-4 bg-dark text-light">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="mx-auto mb-md-0 mb-4 col-xl-3 col-lg-3 col-md-4">
+                          
+  <div id="SocialMediaSectionWrapper" class="pt-2">
+    <p id="SocialMediaSectionWrapper.IconBlock" class="m-1">
+      
+      
+      
+          </p>
+  </div>
+          </div>
+          <div class="mx-auto mb-md-0 mb-4 col-xl-3 col-lg-3 col-md-4">
+            <div id="copyrightDiv" class="pt-3">
+              <p>&#169;
+                  
+          2025
+    
+                    </p>
+                          </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+        <script src=".././js/jquery.slim.min.js"></script>
+        <script src=".././js/popper.min.js"></script>
+        <script src=".././js/bootstrap.min.js"></script>
+        <script src=".././js/prettify.js"></script>
+
+    <!-- Used to enable the code-prettify running on the view. -->
+    <script>
+        addEventListener('load', function(event) { PR.prettyPrint(); }, false);
+    </script>
+  </body>

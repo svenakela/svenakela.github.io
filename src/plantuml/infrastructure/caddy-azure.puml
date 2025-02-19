@@ -1,0 +1,58 @@
+@startuml caddy-coraza-in-azure
+
+' Azure
+  'More symbols can be found here
+  'https://github.com/plantuml-stdlib/Azure-PlantUML/blob/master/AzureSymbols.md#azure-symbols
+  !define AzurePuml https://raw.githubusercontent.com/plantuml-stdlib/Azure-PlantUML/master/dist
+  !includeurl AzurePuml/AzureCommon.puml
+  !includeurl AzurePuml/AzureSimplified.puml
+  !includeurl AzurePuml/DevOps/AzureApplicationInsights.puml
+  !includeurl AzurePuml/Identity/AzureActiveDirectory.puml
+  !includeurl AzurePuml/Security/AzureKeyVault.puml
+  !includeurl AzurePuml/General/Azure.puml
+
+  !includeurl AzurePuml/Management/AzureLogAnalytics.puml
+  !includeurl AzurePuml/Storage/AzureBlobStorage.puml
+  !includeurl AzurePuml/Networking/AzurePublicIPAddress.puml
+  !includeurl AzurePuml/Networking/AzureLoadBalancer.puml
+  !includeurl AzurePuml/Networking/AzureNAT.puml
+  !includeurl AzurePuml/Containers/AzureContainerRegistry.puml
+  !includeurl AzurePuml/Security/AzureApplicationSecurityGroup.puml
+  !includeurl AzurePuml/Containers/AzureContainerApp.puml
+  !includeurl AzurePuml/Networking/AzureDNS.puml
+  !includeurl AzurePuml/Networking/AzureVirtualNetwork.puml
+  !includeurl AzurePuml/Networking/AzureVirtualNetworkPeering.puml
+  !includeurl AzurePuml/Containers/AzureKubernetesService.puml
+  
+  left to right direction
+
+  AzureDNS(dns, "DNS\nyour-server.net", "")
+  AzurePublicIPAddress(pubIp, "Public IP", "")
+  AzureBlobStorage(mounts, "Caddy Files", "")
+  AzureBlobStorage(cdn, "Content", "")
+  AzureLogAnalytics(logs, "Logs", "")
+  AzureContainerRegistry(images, "Images", "")
+  AzureLoadBalancer(lb, "Azure LB", "")
+
+  AzureApplicationSecurityGroup(secGroup, "Sec Group", "")
+
+  rectangle "Azure Container Group" {
+    AzureContainerApp(caddy1, "Caddy\ninstance", "")
+    AzureContainerApp(caddy2, "Caddy\ninstance", "")
+  }
+
+  AzureVirtualNetworkPeering(peer, "Network Peering", "")
+  AzureKubernetesService(aks, "AKS", "")
+  
+  pubIp      -->  lb
+  lb         -->  secGroup
+  secGroup   -->  caddy1
+  secGroup   -->  caddy2
+  caddy1    <---  images
+  caddy1     -->  logs
+  caddy2    <--   mounts
+  caddy2    <..   cdn
+  caddy2     ..>  peer
+  peer       ..>  aks
+
+@enduml

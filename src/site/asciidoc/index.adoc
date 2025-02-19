@@ -1,4 +1,4 @@
 = Tech Docs
 
-Helo
+These pages share concepts, dev insights and infrastructure configuration proven in real prod environments.
 
